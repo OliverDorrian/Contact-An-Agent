@@ -6,13 +6,13 @@ body, html {
     font-family: 'GT Walsheim', sans-serif;
     height: 100vh;
 
-    background-color: #f5f5f5;
+    background-color: white;
 }
 
 #title-container {
     width: 100%;
     height: fit-content;
-    /* background: url("blob-scene-haikei (6).svg") no-repeat center center fixed; */
+    background: url("blob-scene-haikei (6).svg") no-repeat center center fixed;
     background-color: white;
     background-size: 100%;
     -webkit-background-size: cover;
@@ -36,7 +36,6 @@ body, html {
     margin-bottom: 25px;
     font-size: 3em;
     text-align: center;
-    color: black;
 }
 
 #title-text h5 {
@@ -44,10 +43,12 @@ body, html {
     padding-bottom: 25px;
     text-align: center;
     font-size: 1.5em;
-    color: black;
 }
 
 #fact-row {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1440px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -74,14 +75,16 @@ body, html {
 
 
 #info-sec {
+    padding-top: 60px;
+    padding-bottom: 60px;
     width: 80%;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 90px;
 }
 
 #info-sec h3 {
+    margin-top: 0;
     font-size: 3em;
     text-align: center;
     color: #D6A53F;
@@ -92,7 +95,7 @@ body, html {
 }
 
 #img-of-agents {
-    padding-top: 60px;
+    padding-top: 30px;
     padding-bottom: 60px;
     background-color: white;
 }
@@ -141,4 +144,192 @@ body, html {
 .agent p {
     text-align: center;
     color: black;
+}
+
+/* CSS */
+.button-86 {
+    all: unset;
+    width: 300px;
+    height: 60px;
+    font-size: 32px;
+    background: transparent;
+    border: none;
+    position: relative;
+    color: #f0f0f0;
+    cursor: pointer;
+    z-index: 1;
+    margin-top: 20px;
+    padding: 10px 20px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-86::after,
+.button-86::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -99999;
+    transition: all .4s;
+}
+
+.button-86::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: #D6A53F;
+    border-radius: 10px;
+}
+
+.button-86::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+}
+
+.button-86:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+}
+
+.button-86:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+.button-86:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+}
+
+.overlay {
+    position: relative;
+    display: inline-block;
+    --border-style: 2px solid rgb(206, 164, 27);
+    --border-space: 20px;
+}
+
+.overlay-element {
+    position: absolute;
+    width: 150px;
+    /* controls the length of the borders */
+    height: 100px;
+    /* controls the height of the borders */
+}
+
+.overlay .top-left {
+    margin: -50px;
+    border-left: var(--border-style);
+    border-top: var(--border-style);
+    top: var(--border-space);
+    left: var(--border-space);
+}
+
+.overlay .top-right {
+    margin: -50px;
+    border-right: var(--border-style);
+    border-top: var(--border-style);
+    top: var(--border-space);
+    right: var(--border-space);
+}
+
+.overlay .bottom-left {
+    margin: -50px;
+    border-left: var(--border-style);
+    border-bottom: var(--border-style);
+    bottom: var(--border-space);
+    left: var(--border-space);
+}
+
+.overlay .bottom-right {
+    margin: -50px;
+    border-right: var(--border-style);
+    border-bottom: var(--border-style);
+    bottom: var(--border-space);
+    right: var(--border-space);
+}
+
+@media only screen and (max-width: 875px) {
+
+    #fact-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .fact-box {
+        width: 50%;
+        padding-bottom: 25px;
+    }
+
+    #agent-img {
+        width: calc(100% - 20px);
+    }
+
+    .agent {
+        width: 40%;
+    }
+
+    .button-86 {
+        width: calc(70% - 20px);
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #title-container {
+        background-image: unset;
+    } 
+    
+    #title-text h1 {
+        color: black;
+        padding-top: 30px;
+    }
+
+    #title-container-inner {
+        color: black;
+        padding-bottom: unset;
+    }
+
+    .fact-box h5 {
+        font-size: 2em;
+    }
+
+    .overlay .top-left {
+        display: none;
+    }
+
+    .overlay .top-right {
+        display: none;
+    }
+
+    .overlay .bottom-left {
+        display: none;
+    }
+
+    .overlay .bottom-right {
+        display: none;
+    }
+
+    #img-of-agents {
+        width: 100%;
+    }
+
+    .agent {
+        width: 100%;
+    }
 }
