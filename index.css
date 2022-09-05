@@ -10,8 +10,8 @@ body, html {
 #title-container {
     width: 100%;
     height: fit-content;
-    background-image: url('https://svgshare.com/getbyhash/sha1-V/inkl+A4mcJdEFyZPswd6HnsWY=');
-    background-size: 100% auto;
+    background-image: url('blob-scene-haikei (4).svg');
+    background-size: cover;
     background-repeat: no-repeat;
     color: white;
 }
